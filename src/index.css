@@ -99,14 +99,24 @@
 
 @layer utilities {
   .gradient-primary {
-    background: linear-gradient(135deg, #1eaedb 0%, #8b5cf6 100%);
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500;
   }
 
   .gradient-secondary {
-    background: linear-gradient(135deg, #f97316 0%, #d946ef 100%);
+    @apply bg-gradient-to-r from-purple-500 to-pink-400;
   }
 
-  .gradient-accent {
-    background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #f97316 100%);
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 }
